@@ -18,22 +18,35 @@ const Activity = () => {
   };
 
   const deleteActivity = (id) => {
-    axios.delete("/"+id)
-    .then(function (response) {
-      console.log(JSON.stringify(response.data));
-      getActivity();
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
+    axios
+      .delete("/" + id)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        getActivity();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   useEffect(() => {
     getActivity();
   }, []);
 
   const handleClickAdd = () => {
-    console.log("test add");
+
+    const config = {
+      method: "post",
+      data: { title: "New test activity", email: "csworksdev@gmail.com" },
+    };
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        getActivity();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
@@ -50,7 +63,10 @@ const Activity = () => {
       </div>
       <div className="dashboard-content">
         {activityList ? (
-          <ActivityList activityList={activityList} handleDeleteActivity={deleteActivity}/>
+          <ActivityList
+            activityList={activityList}
+            handleDeleteActivity={deleteActivity}
+          />
         ) : (
           <EmptyActivity />
         )}
