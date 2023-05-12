@@ -2,7 +2,7 @@ import React from "react";
 import ActivityItemDeleteButton from "../../assets/img/activity-item-delete-button.svg";
 import moment from "moment";
 
-const ActivityListItem = ({props}) => {
+const ActivityListItem = (props) => {
 
   return (
     <div
