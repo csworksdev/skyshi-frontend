@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'https://todo.api.devcode.gethired.id/activity-groups';
+axios.defaults.maxBodyLength= Infinity;
+axios.defaults.headers= {};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
