@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+function Header() {
   return (
     <div className="header">
       <div data-cy="header-background" className="container">
@@ -8,6 +8,6 @@ const Header = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Header;

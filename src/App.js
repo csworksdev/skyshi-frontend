@@ -1,13 +1,15 @@
-import './App.css';
-import Activity from './pages/activity';
-import Header from './pages/header';
+import Routes from "./Routes";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <>
-    <Header />
-    <Activity />
-    </>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </Provider>
   );
 }
 
